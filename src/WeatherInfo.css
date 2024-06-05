@@ -1,0 +1,8 @@
+.WeatherInfo{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.card{
+    width: 900px;
+}
