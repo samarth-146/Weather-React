@@ -10,7 +10,7 @@ export default function Search({data}) {
     let [error,setError]=useState(false);
 
     let apiCall=async()=>{
-        let response=await fetch(`${process.env.URL}?q=${search}&appid=${process.env.API_KEY}&units=metric`);
+        let response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=6a1d9e2146685c78804d304d75e5daec&units=metric`);
         let jsonResponse=await response.json();
         let weather={
             city:search,
@@ -29,7 +29,6 @@ export default function Search({data}) {
         try{
             event.preventDefault();
             let weather=await apiCall();
-            console.log(weather);
             data(weather);
             setSearch("");
             setError(false);
